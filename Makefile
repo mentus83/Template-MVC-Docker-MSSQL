@@ -1,0 +1,11 @@
+build:
+	# cd ./mvc/client && docker build $(options) -t nhitapps-node:latest .
+	cd mvc && docker build $(options) -t nhitapps-dotnet:latest .
+
+run:
+	docker compose up --remove-orphans $(options)
+
+cleanup:
+	docker-compose down --remove-orphans
+	docker images prune
+	DangImages=($$(docker images -f "dangling=true" -q)) && if [ $${#DangImages[*]} -gt 0 ]; then docker rmi $${DangImages[@]}; fi

@@ -1,0 +1,6 @@
+{
+    "ConnectionStrings": {
+        "ApplicationsContextDb": "Server=host.docker.internal,11433;Database=ApplicationsDb;User=sa;Password=ThiIsReallySecure!3"
+    }
+
+}

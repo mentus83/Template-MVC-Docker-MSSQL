@@ -1,0 +1,12 @@
+[
+    {
+         "Name": "Charm",
+         "Version": "1.1.2",
+         "InstallationDate": "2020-01-01"
+    },
+    {
+        "Name": "EDIS",
+        "Version": "2.11",
+        "InstallationDate": "2016-01-01"
+   }
+]
