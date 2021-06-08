@@ -5,6 +5,6 @@ RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:5.0
 WORKDIR /app
-COPY --from=dotnet-build ./app/out/publish .
+COPY --from=dotnet-build ./app/out .
 EXPOSE 5000
 ENTRYPOINT ["dotnet", "mvc.dll"]
