@@ -26,7 +26,7 @@ namespace mvc
         {
             services.AddDbContext<Data.Models.ApplicationsContext>();
 
-            services.AddTransient<ApplicationsSeeder>();
+            //services.AddTransient<ApplicationsSeeder>();
 
             services.AddControllersWithViews();
         }

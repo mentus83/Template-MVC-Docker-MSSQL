@@ -19,7 +19,7 @@ namespace mvc
         {
             var host = CreateHostBuilder(args).Build();
             
-            RunSeeding(host);
+            //RunSeeding(host);
             
             host.Run();
         }
@@ -46,7 +46,7 @@ namespace mvc
 
         private static void AddConfiguration(HostBuilderContext ctx, IConfigurationBuilder builder)
         {
-            builder.Sources.Clear();
+            //builder.Sources.Clear;
             builder.SetBasePath(Directory.GetCurrentDirectory())
                 .AddJsonFile("config.json")
                 .AddEnvironmentVariables();

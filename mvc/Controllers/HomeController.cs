@@ -23,8 +23,7 @@ namespace mvc.Controllers
 
         public IActionResult Index()
         {
-            var apps = _context.Applcations.ToList();
-            return View(apps);
+            return View(); 
         }
 
         public IActionResult Privacy()
