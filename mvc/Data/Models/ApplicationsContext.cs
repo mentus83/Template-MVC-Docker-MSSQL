@@ -19,10 +19,11 @@ namespace mvc.Data.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) {
             var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION_STRING");
             optionsBuilder.UseSqlServer(connectionString);
-            //optionsBuilder.UseSqlServer(_config["ConnectionStrings:ApplicationsContextDb"]);
+            // To Read From Config file: optionsBuilder.UseSqlServer(_config["ConnectionStrings:ApplicationContextDb"]);
         }
 
         /*
+        To use HasData instead of Seeding at the Program start:
         protected override void OnModelCreating(ModelBuilder modelBuilder) {
             modelBuilder.Entity<NhApplcation>()
             .HasData(new NhApplcation(){

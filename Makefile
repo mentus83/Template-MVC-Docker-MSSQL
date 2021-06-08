@@ -1,5 +1,4 @@
 build:
-	# cd ./mvc/client && docker build $(options) -t nhitapps-node:latest .
 	cd mvc && docker build $(options) -t nhitapps-dotnet:latest .
 
 run:

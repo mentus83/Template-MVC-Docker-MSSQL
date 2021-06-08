@@ -25,7 +25,7 @@ namespace mvc.Data.Models
             _ctx.Database.EnsureCreated();
 
             if (!_ctx.Applcations.Any()) {
-                var filePath = Path.Combine(_webEnv.ContentRootPath, "Data/Samples/apps.json");
+                var filePath = Path.Combine(_webEnv.ContentRootPath, "Data/Samples/data.json");
                 var json = File.ReadAllText(filePath);
                 var nhApplications = JsonSerializer.Deserialize<IEnumerable<NhApplcation>>(json);
 
