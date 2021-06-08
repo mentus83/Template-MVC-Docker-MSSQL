@@ -1,5 +1,5 @@
 build:
-	cd mvc && docker build $(options) -t nhitapps-dotnet:latest .
+	cd mvc && docker build $(options) -t web-dotnetcore:latest .
 
 run:
 	docker compose up --remove-orphans $(options)

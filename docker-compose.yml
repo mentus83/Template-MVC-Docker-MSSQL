@@ -2,7 +2,7 @@ version: '3.9'
 
 services:
   mvc:
-    image: nhitapps-dotnet:latest
+    image: web-dotnetcore:latest
     ports:
       - ${WEB_PORT}:5000
     environment:
