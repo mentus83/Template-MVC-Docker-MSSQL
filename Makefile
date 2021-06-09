@@ -2,7 +2,7 @@ build:
 	cd mvc && docker build $(options) -t web-dotnetcore:latest .
 
 run:
-	docker compose up --remove-orphans $(options)
+	docker compose up $(options) --remove-orphans
 
 cleanup:
 	docker-compose down --remove-orphans

@@ -1,6 +1,19 @@
 version: '3.9'
 
 services:
+  mvc:
+    image: web-dotnetcore:latest
+    ports:
+      - ${WEB_PORT}:5000
+    environment:
+      - ASPNETCORE_URLS=http://+:${WEB_PORT}
+      - DB_CONNECTION_STRING=${DB_CONNECTION_STRING}
+    depends_on: 
+      - db-mssql
+    volumes:
+      - ./mvc/bin/Release/net5.0/publish:/app:rw,cached
+      - ./mvc/logs:/app/logs:rw,cached
+
   db-mssql:
     image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
     environment:
