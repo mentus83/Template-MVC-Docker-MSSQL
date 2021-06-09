@@ -1,12 +1,14 @@
 [
     {
-         "key1": "val1",
-         "key2": "val2",
-         "key3": "val3"
+         "Name": "val1",
+         "Description": "val2",
+         "LastUpdatedBy": "val3",
+         "LastUpdated": "2021-06-09T14:03:18"
     },
     {
-          "key1": "val4",
-          "key2": "val5",
-          "key3": "val6"
+          "Name": "val5",
+          "Description": "val6",
+          "LastUpdatedBy": "val7",
+          "LastUpdated": "2021-06-05T11:43:32"
      }
 ]

@@ -19,7 +19,7 @@ namespace mvc
         {
             var host = CreateHostBuilder(args).Build();
             
-            //RunSeeding(host);
+            RunSeeding(host);
             
             host.Run();
         }
@@ -30,10 +30,9 @@ namespace mvc
 
             using (var scope = scopeFactory.CreateScope())
             {
-                var seeder = scope.ServiceProvider.GetService<ApplicationsSeeder>();
+                var seeder = scope.ServiceProvider.GetService<MyObjectSeeder>();
                 seeder.Seed();
             }
-            
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>

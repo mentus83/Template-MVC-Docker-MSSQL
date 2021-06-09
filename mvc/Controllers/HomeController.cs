@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using mvc.Models.ViewModels;
@@ -12,10 +8,10 @@ namespace mvc.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ApplicationsContext _context;
+        private readonly MyObjectContext _context;
         private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger, ApplicationsContext context)
+        public HomeController(ILogger<HomeController> logger, MyObjectContext context)
         {
             _context = context;
             _logger = logger;
