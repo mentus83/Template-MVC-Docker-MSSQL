@@ -2,12 +2,19 @@
 > Hosted in a docker container using EntityFramework Core to connect with SQL Server database
 ---
 ## Componenets
-- ASP .net core 5 MVC
-- EntityFramework Core
-- MS SQL Server
-- Angular
-- Bootstrap
-- AutoMapper
+- Framework
+    - ASP .net core 5 MVC
+- Data
+    - MS SQL Server
+    - EntityFramework Core
+    - AutoMapper
+- Front-end
+    - Angular
+    - Bootstrap
+    - Fontawesome
+- Hosting Environment
+    - Docker
+    - Self-hosting
 
 ## Requirements for development environment
 ### dotnet sdk 5

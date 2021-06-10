@@ -21,7 +21,7 @@ namespace mvc.Api.Controllers
             try
             {
                 var myObjects = _repo.GetAll();
-                if (myObjects == null) return BadRequest("Nothing was found!");
+                if (myObjects == null) return NotFound("Nothing was found!");
                 return Json(myObjects);
             }
             catch (System.Exception ex)
