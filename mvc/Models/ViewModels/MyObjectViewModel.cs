@@ -8,6 +8,7 @@ namespace mvc.Models.ViewModels
     {
         public int Id { get; set; }
         [Required]
+        [MinLength(3)]
         public string Name { get; set; }
         public string Description { get; set; }
         public string LastUpdatedBy { get; set; }
