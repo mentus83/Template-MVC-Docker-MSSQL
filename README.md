@@ -19,7 +19,7 @@
 ### dotnet sdk 5
 Install dotnet sdk 5 from the following [link](https://dotnet.microsoft.com/download/dotnet/5.0)
 
-### EntityFramework Core
+### EntityFramework Core v5.0.6
 Once dotnet cli is installed, install EntityFramework core using the following command:
 `dotnet tool install dotnet-ef`
 
@@ -41,17 +41,23 @@ In order to use Makefile shortcut commands on Windows, first install Makefile pa
 
 ## Libraries
 ### Server-Side
-- Microsoft.EntityFrameworkCore.SqlServer
-- AutoMapper.Extensions.Microsoft.DependencyInjection
-- Microsoft.AspNetCore.Mvc.NewtonsoftJson
+#### Entityframework Core
+- `dotnet add package Microsoft.EntityFrameworkCore.SqlServer`
+#### AutoMapper
+- `dotnet add package AutoMapper.Extensions.Microsoft.DependencyInjection`
+#### Newtonsoft Json
+This package is a built-in component of .NET core. This package is needed if there is need for serializing self-referencing objects.
+- `dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson`
 ### Client-Side
-- Angular 
-    - Installed using npm (requires node.js)
-    `npm install @angular/cli -g` (-g for global)
-- Bootstrap
-    - Can use Visual Studio `Add` > `Client-side library` which uses Libman
-- Fontawesome
-    - Can use Visual Studio `Add` > `Client-side library` which uses Libman
+#### Angular 
+Install *node.js* latest version via the following [link](https://nodejs.org/en/download/current/):
+- node version: 16.2.0
+- npm version: 7.15.1
+- `npm install @angular/cli -g` (-g for global)
+#### Bootstrap
+Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
+#### Fontawesome
+Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
 
 ## Debugging
 In order to run the app in debug mode and be albe to connect to the database, the connection string needs to be added as a **user** environment variable with key name `DB_CONNECTION_STRING` and the following value:
@@ -60,8 +66,9 @@ e.g. using PowerShell cpmmand:
 `setx DB_CONNECTION_STRING "Server=.,11433;Database=ApplicationsDb;User=sa;Password=ThiIsReallySecure!3;MultipleActiveResultSets=true"`
 
 ## Helpful vscode extensions
-- C# (Microsoft) aka Omnisharp
-- Gitignore Templates (Hasan Ali)
-- Material Icon Theme (Philipp Kief)
-- Docker (Microsoft)
-- Markdown Preview Enhanced (Yiyi Wang)
+- C# (Microsoft) aka Omnisharp v1.23.12
+- C# Extensions (JosKreativ) v1.4.0
+- Gitignore Templates (Hasan Ali) v1.0.1
+- Material Icon Theme (Philipp Kief) v4.7.0
+- Docker (Microsoft) v1.13.0
+- Markdown Preview Enhanced (Yiyi Wang) v0.5.21
