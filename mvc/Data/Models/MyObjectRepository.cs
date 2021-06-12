@@ -17,7 +17,9 @@ namespace mvc.Data.Models
             _ctx = ctx;
         }
         public IEnumerable<MyObject> GetAll () {
-            return _ctx.MyObjects.ToList();
+            return _ctx.MyObjects
+                        .Include(o => o.MyObjectItems)
+                        .ToList();
         }
         public bool DatabaseIsAvailable()
         {

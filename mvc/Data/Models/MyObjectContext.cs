@@ -11,6 +11,7 @@ namespace mvc.Data.Models
         private readonly IConfiguration _config;
 
         public DbSet<MyObject> MyObjects { get; set; }
+        public DbSet<MyObjectItem> MyObjectItems { get; set; }
         public MyObjectContext(IConfiguration config)
         {
             _config = config;

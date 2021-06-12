@@ -3,12 +3,36 @@
          "Name": "val1",
          "Description": "val2",
          "LastUpdatedBy": "val3",
-         "LastUpdated": "2021-06-09T14:03:18"
+         "LastUpdated": "2021-06-09T14:03:18",
+         "MyObjectItems": [
+               {
+                    "Name": "My Object 1 Item 1",
+                    "Description": "Description of My Object 1 Item 1"
+               },
+               {
+                    "Name": "My Object 1 Item 2",
+                    "Description": "Description of My Object 1 Item 2"
+               }
+         ]
     },
     {
           "Name": "val5",
           "Description": "val6",
           "LastUpdatedBy": "val7",
-          "LastUpdated": "2021-06-05T11:43:32"
+          "LastUpdated": "2021-06-05T11:43:32",
+          "MyObjectItems": [
+                {
+                     "Name": "My Object 2 Item 1",
+                     "Description": "Description of My Object 2 Item 1"
+                },
+                {
+                     "Name": "My Object 2 Item 2",
+                     "Description": "Description of My Object 2 Item 2"
+                },
+                {
+                     "Name": "My Object 2 Item 3",
+                     "Description": "Description of My Object 2 Item 3"
+                }
+          ]
      }
 ]

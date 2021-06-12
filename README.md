@@ -14,7 +14,6 @@
     - Fontawesome
 - Hosting Environment
     - Docker
-    - Self-hosting
 
 ## Requirements for development environment
 ### dotnet sdk 5
@@ -27,7 +26,7 @@ Once dotnet cli is installed, install EntityFramework core using the following c
 ### Docker
 #### Windows
 Install Docker Desktop from the following [link](https://docs.docker.com/docker-for-windows/install/)
-#### Linux e.g. Ubuntu 21
+#### Linux e.g. Ubuntu server 21
 `sudo apt install docker-ce docker-ce-cli containerd.io`
 `sudo usermod -aG docker $USER`
 ##### Install docker-compose
@@ -37,8 +36,22 @@ Install Docker Desktop from the following [link](https://docs.docker.com/docker-
 ### Make
 #### Windows
 In order to use Makefile shortcut commands on Windows, first install Makefile package using [cygwin](https://cygwin.com/install.html)
-#### Linux e.g. Ubuntu 21
+#### Linux e.g. Ubuntu server 21
 `sudo apt install make`
+
+## Libraries
+### Server-Side
+- Microsoft.EntityFrameworkCore.SqlServer
+- AutoMapper.Extensions.Microsoft.DependencyInjection
+- Microsoft.AspNetCore.Mvc.NewtonsoftJson
+### Client-Side
+- Angular 
+    - Installed using npm (requires node.js)
+    `npm install @angular/cli -g` (-g for global)
+- Bootstrap
+    - Can use Visual Studio `Add` > `Client-side library` which uses Libman
+- Fontawesome
+    - Can use Visual Studio `Add` > `Client-side library` which uses Libman
 
 ## Debugging
 In order to run the app in debug mode and be albe to connect to the database, the connection string needs to be added as a **user** environment variable with key name `DB_CONNECTION_STRING` and the following value:
