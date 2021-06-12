@@ -12,6 +12,7 @@
     - Angular
     - Bootstrap
     - Fontawesome
+    - Razor Pages
 - Hosting Environment
     - Docker
 
@@ -48,6 +49,9 @@ In order to use Makefile shortcut commands on Windows, first install Makefile pa
 #### Newtonsoft Json
 This package is a built-in component of .NET core. This package is needed if there is need for serializing self-referencing objects.
 - `dotnet add package Microsoft.AspNetCore.Mvc.NewtonsoftJson`
+#### Razor Pages
+- `dotnet add package Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation`
+- Version 5.0.7 (2021-06-12)
 ### Client-Side
 #### Angular 
 Install *node.js* latest version via the following [link](https://nodejs.org/en/download/current/):
@@ -65,6 +69,13 @@ Install *node.js* latest version via the following [link](https://nodejs.org/en/
 Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
 #### Fontawesome
 Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
+
+## Razor Pages
+Configuration required for Razor pages:
+1. `@Page` at the top of the .cshtml file
+2. `Startup.cs` > `ConfigureServices` > `services.AddRazorPages();`
+3. `Startup.cs` > `Configure` > `app.UseEndpoints(cfg => cfg.MapRazorPages(););`
+4. `Startup.cs` > `ConfigureServices` > `services.AddControllerWithViews().AddRazorRuntimeCompilation();` This requires the following package `Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation`
 
 ## Debugging
 In order to run the app in debug mode and be albe to connect to the database, the connection string needs to be added as a **user** environment variable with key name `DB_CONNECTION_STRING` and the following value:
