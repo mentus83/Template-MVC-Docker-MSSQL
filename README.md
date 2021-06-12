@@ -53,7 +53,14 @@ This package is a built-in component of .NET core. This package is needed if the
 Install *node.js* latest version via the following [link](https://nodejs.org/en/download/current/):
 - node version: 16.2.0
 - npm version: 7.15.1
-- `npm install @angular/cli -g` (-g for global)
+    - Install Angular globally i.e. not just for this project
+        - `npm install @angular/cli -g`
+    - Create a new Angular project
+        - `ng new MyClientName --skip-git --skip-tests --minimal --defaults`
+    - Build the project into its default destination
+        - `ng build`
+    - Run Angular to serve the client app and view it in a browser
+        - `ng serve`
 #### Bootstrap
 Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
 #### Fontawesome
@@ -72,3 +79,8 @@ e.g. using PowerShell cpmmand:
 - Material Icon Theme (Philipp Kief) v4.7.0
 - Docker (Microsoft) v1.13.0
 - Markdown Preview Enhanced (Yiyi Wang) v0.5.21
+
+## To Be Implemented
+### Views
+### API Post & Delete
+### Angular
