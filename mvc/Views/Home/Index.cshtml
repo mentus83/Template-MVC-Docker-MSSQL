@@ -2,7 +2,13 @@
 @{
     ViewData["Title"] = "Home Page";
 }
+@section Scripts {
+    <script src="~/client/polyfills.js"></script>
+    <script src="~/client/runtime.js"></script>
+    <script src="~/client/main.js" asp-append-version="true"></script>
+}
 @section Styles {
+    <link rel="stylesheet" href="~/client/styles.css"></link>
     <link rel="stylesheet" href="~/css/index.css"></link>
 }
 <div class="text-center">
@@ -10,4 +16,5 @@
     <p class="lead">This template is used to have a starting point for new web applications which employ ASP.NETCore MVC using dotnet SDK 5 framework, in addittion to 
         EntityFramework Core for data handling, Angular for building Single Page Applications inside the web app. This template uses Bootstrap library to give the view 
         of the website a modern look. Bootstrap templates can be used to modify the look and feel of the website.</p>
+    <my-objects>Angular failed to replace this item.</my-objects>
 </div>

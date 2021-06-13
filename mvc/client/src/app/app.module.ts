@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
-import { AppComponent } from './app.component';
+import { Client } from './services/client.service';
+import MyObjectListView from './views/myobjectListView.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    MyObjectListView
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    Client
+  ],
+  bootstrap: [MyObjectListView]
 })
 export class AppModule { }
