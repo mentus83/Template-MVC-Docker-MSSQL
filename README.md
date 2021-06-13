@@ -72,7 +72,7 @@ Download manually or use Visual Studio `Add` > `Client-side library` which uses 
 ### Build the project
 - `ng build`
 - `ng build --watch` (to constantly build once a change is made to any file)
-- `ng build --configuration production --watch` (this way )
+- `ng build --configuration production --watch`
 ### Run Angular to serve the client app and view it in a browser
 - `ng serve`
 
