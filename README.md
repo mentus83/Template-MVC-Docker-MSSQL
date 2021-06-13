@@ -59,19 +59,24 @@ Install *node.js* latest version via the following [link](https://nodejs.org/en/
 - npm version: 7.15.1
     - Install Angular globally i.e. not just for this project
         - `npm install @angular/cli -g`
-    - Create a new Angular project
-        - `ng new MyClientName --skip-git --skip-tests --minimal --defaults`
-    - Build the project into its default destination
-        - `ng build`
-    - Run Angular to serve the client app and view it in a browser
-        - `ng serve`
 #### Bootstrap
 Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
 #### Fontawesome
 Download manually or use Visual Studio `Add` > `Client-side library` which uses Libman
 
+## Angular
+### Create a new Angular project
+- `ng new MyClientName --skip-git --skip-tests --minimal --defaults`
+### Change build output directory using the following configuration in `angular.json` file:
+- `projects/client/architect/build/options/outputPath`
+### Build the project
+- `ng build`
+- `ng build --watch` (to constantly build once a change is made to any file)
+### Run Angular to serve the client app and view it in a browser
+- `ng serve`
+
 ## Razor Pages
-Not to be confused with Razie **Views**
+Not to be confused with Razor **Views**
 ### Configuration required for Razor pages:
 1. .cshtml residing in a Pages folder in the project root
 2. `@Page` at the top of the .cshtml file
@@ -98,4 +103,3 @@ e.g. using PowerShell cpmmand:
 ## To Be Implemented
 ### Views
 ### API Post & Delete
-### Angular
