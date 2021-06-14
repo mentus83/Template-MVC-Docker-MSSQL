@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { environment } from "src/environments/environment";
 import { Client } from "../services/client.service";
 import * as $ from "jquery";
+import { MyObject } from "../models/MyObject";
 
 @Component({
     selector: "my-objects",
@@ -12,6 +13,8 @@ export default class MyObjectListView implements OnInit {
     constructor(public client: Client){
     }
     
+    public newMyObjectToAdd: MyObject = new MyObject();
+
     ngOnInit(): void {
         this.client.loadMyObjects()
             .subscribe();
@@ -29,6 +32,21 @@ export default class MyObjectListView implements OnInit {
     }
 
     public toggleMyObjectItems(event:any): void {
-        $(event.target).closest('tr').next('.myObjectItems').toggle();
+        $(event.target).closest('tr').next('.myObjectItems').toggle(200);
+    }
+
+    public toggleAddNewMyObject(event:any): void {
+        $(event.target).closest('div.row').next('div.addNewMyObjectDiv').toggle(200);
+    }
+
+    // TODO
+    public addNewObject() {
+        console.log("posting object", this.newMyObjectToAdd);
+        this.client.addNewMyObject(this.newMyObjectToAdd)
+        .subscribe(() => {
+            // success
+        }, error => {
+            // error
+        });
     }
 }

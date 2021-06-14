@@ -2,6 +2,27 @@
     margin-top: 100px;
 }
 
-.myObjectItems {
+.myObjectItems, .addNewMyObjectDiv {
     display: none;
+}
+
+#addItemButton {
+    color: forestgreen;
+    padding-right: 5px;
+}
+
+#addItemDiv {
+    float: left;
+    width: 60px;
+}
+
+.addNewMyObjectDiv {
+    padding: 20px;
+    border: dashed teal 2px;
+    margin: 10px;
+}
+
+tr.myObjectItems th, tr.myObjectItems td {
+    color: rgb(79, 84, 90);
+    background-color: rgb(240, 236, 236);
 }

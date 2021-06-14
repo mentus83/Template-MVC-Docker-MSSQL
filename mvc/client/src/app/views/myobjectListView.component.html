@@ -6,11 +6,62 @@
         <div class="col"></div>
         <div class="col-8">
             <div class="row">
+                <div>
+                    <div id="addItemDiv" (click)="toggleAddNewMyObject($event)">
+                        <i class="fas fa-plus-circle" id="addItemButton"></i>
+                        <span>Add</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row addNewMyObjectDiv">
+                <form>
+                    <div class="col-5">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <label For="NameInput" class="input-group-text">Name</label>
+                            </div>
+                            <input class="form-control" name="Name" id="NameInput" type="text"
+                                [(ngModel)]="newMyObjectToAdd.name" />
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <label For="DescriptionInput" class="input-group-text">Description</label>
+                            </div>
+                            <input class="form-control" name="Description" id="DescriptionInput" type="text"
+                                [(ngModel)]="newMyObjectToAdd.description" />
+                        </div>
+                    </div>
+                    <div class="col"></div>
+                    <div class="col-5">
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <label For="LastUpdatedInput" class="input-group-text">Last Updated</label>
+                            </div>
+                            <input class="form-control" name="LastUpdated" id="LastUpdatedInput" type="text"
+                                [(ngModel)]="newMyObjectToAdd.lastUpdated" />
+                        </div>
+                        <div class="input-group mb-2">
+                            <div class="input-group-prepend">
+                                <label For="LastUpdatedByInput" class="input-group-text">Last Updated By</label>
+                            </div>
+                            <input class="form-control" name="LastUpdatedBy" id="LastUpdatedByInput" type="text"
+                                [(ngModel)]="newMyObjectToAdd.lastUpdatedBy" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col"></div>
+                        <div class="col-1">
+                            <a href="#" class="btn btn-primary" (click)="addNewObject()">Add</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row">
                 <div class="col"></div>
                 <div class="col-4">
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
-                            <label For="FilterInput" class="input-group-text">Filter:</label>
+                            <label For="FilterInput" class="input-group-text">Filter</label>
                         </div>
                         <input class="form-control" name="Filter" id="FilterInput" type="text" [(ngModel)]="filter" />
                     </div>

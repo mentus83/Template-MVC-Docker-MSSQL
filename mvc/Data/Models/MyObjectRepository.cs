@@ -1,9 +1,11 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using mvc.Data.Models.Interfaces;
 using mvc.Models.Entities;
+using mvc.Models.ViewModels;
 
 namespace mvc.Data.Models
 {
@@ -24,6 +26,22 @@ namespace mvc.Data.Models
         public bool DatabaseIsAvailable()
         {
             return _ctx.Database.CanConnect();
+        }
+        public void AddEntity(object model)
+        {
+            _ctx.Add(model);
+        }
+        public void SaveAll()
+        {
+            _ctx.SaveChanges();
+        }
+
+        public MyObject GetById(int id)
+        {
+            return _ctx.MyObjects
+                        .Include(o => o.MyObjectItems)
+                        .Where(o => o.Id == id)
+                        .FirstOrDefault();
         }
     }
 }

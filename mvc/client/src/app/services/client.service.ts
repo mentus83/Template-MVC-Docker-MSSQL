@@ -16,4 +16,11 @@ export class Client {
                 this.myobjects = data;
             }));
     }
+
+    addNewMyObject(newMyObject:MyObject){
+        return this.http.post("/api/myobject", newMyObject)
+            .pipe(map(data => {
+                
+            }));
+    }
 }
