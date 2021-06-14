@@ -63457,7 +63457,7 @@ class MyObjectListView {
     }
 }
 MyObjectListView.ɵfac = function MyObjectListView_Factory(t) { return new (t || MyObjectListView)(_angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdirectiveInject"](_services_client_service__WEBPACK_IMPORTED_MODULE_2__.Client)); };
-MyObjectListView.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MyObjectListView, selectors: [["my-objects"]], decls: 32, vars: 3, consts: [[1, "container"], [1, "row"], [1, "col"], [1, "col-8"], [1, "col-4"], [1, "input-group", "mb-2"], [1, "input-group-prepend"], [1, "input-group-text"], ["name", "Filter", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "table", "table-condenced"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "click"], [1, "myObjectItems"], ["colspan", "5"], ["id", "devHelper", 1, "row"]], template: function MyObjectListView_Template(rf, ctx) { if (rf & 1) {
+MyObjectListView.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵdefineComponent"]({ type: MyObjectListView, selectors: [["my-objects"]], decls: 32, vars: 3, consts: [[1, "container"], [1, "row"], [1, "col"], [1, "col-8"], [1, "col-4"], [1, "input-group", "mb-2"], [1, "input-group-prepend"], ["For", "FilterInput", 1, "input-group-text"], ["name", "Filter", "id", "FilterInput", "type", "text", 1, "form-control", 3, "ngModel", "ngModelChange"], [1, "table", "table-condenced"], [4, "ngFor", "ngForOf"], [4, "ngIf"], [3, "click"], [1, "myObjectItems"], ["colspan", "5"], ["id", "devHelper", 1, "row"]], template: function MyObjectListView_Template(rf, ctx) { if (rf & 1) {
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](0, "div", 0);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](1, "div", 1);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](2, "h3");
@@ -63472,7 +63472,7 @@ MyObjectListView.ɵcmp = /*@__PURE__*/ _angular_core__WEBPACK_IMPORTED_MODULE_3_
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](9, "div", 4);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](10, "div", 5);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](11, "div", 6);
-        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "div", 7);
+        _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementStart"](12, "label", 7);
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵtext"](13, "Filter:");
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
         _angular_core__WEBPACK_IMPORTED_MODULE_3__["ɵɵelementEnd"]();
