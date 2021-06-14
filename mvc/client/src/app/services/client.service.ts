@@ -1,6 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { MyObject } from "../shared/MyObject";
+import { MyObject } from "../models/MyObject";
 import { map } from "rxjs/operators";
 
 @Injectable()

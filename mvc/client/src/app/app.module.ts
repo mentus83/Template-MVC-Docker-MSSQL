@@ -4,6 +4,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { Client } from './services/client.service';
 import MyObjectListView from './views/myobjectListView.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -11,7 +12,8 @@ import MyObjectListView from './views/myobjectListView.component';
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [
     Client
