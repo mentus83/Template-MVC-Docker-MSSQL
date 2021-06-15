@@ -71256,7 +71256,8 @@ class Client {
     }
     addNewMyObject(newMyObject) {
         return this.http.post("/api/myobject", newMyObject)
-            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.map)(data => {
+            .pipe((0,rxjs_operators__WEBPACK_IMPORTED_MODULE_0__.map)((data) => {
+            return data.id;
         }));
     }
 }
@@ -71462,13 +71463,13 @@ class MyObjectListView {
     toggleAddNewMyObject(event) {
         jquery__WEBPACK_IMPORTED_MODULE_1__(event.target).closest('div.row').next('div.addNewMyObjectDiv').toggle(200);
     }
-    // TODO
     addNewObject() {
         this.client.addNewMyObject(this.newMyObjectToAdd)
-            .subscribe(() => {
-            this.notify.showSuccess("New object was successfully added to the database.", "Upload Success");
-        }, error => {
-            this.notify.showError(`Failed to add new object to the database</br>${error.message}`, "Upload Failed");
+            .subscribe(addedObjId => {
+            this.notify.showSuccess(`New object was successfully added to the database.</br>id=${addedObjId}`, "Upload Success");
+        }, errorResp => {
+            console.error(errorResp);
+            this.notify.showError(`${errorResp.error.errors.Name[0]}`, "Upload Failed");
         });
     }
 }

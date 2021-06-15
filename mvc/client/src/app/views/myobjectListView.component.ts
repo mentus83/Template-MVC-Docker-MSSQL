@@ -43,13 +43,13 @@ export default class MyObjectListView implements OnInit {
         $(event.target).closest('div.row').next('div.addNewMyObjectDiv').toggle(200);
     }
 
-    // TODO
     public addNewObject() {
         this.client.addNewMyObject(this.newMyObjectToAdd)
-        .subscribe(() => {
-            this.notify.showSuccess("New object was successfully added to the database.", "Upload Success");
-        }, error => {
-            this.notify.showError(`Failed to add new object to the database</br>${error.message}`, "Upload Failed");
+        .subscribe(addedObjId => {
+            this.notify.showSuccess(`New object was successfully added to the database.</br>id=${addedObjId}`, "Upload Success");
+        }, errorResp => {
+            console.error(errorResp);
+            this.notify.showError(`${errorResp.error.errors.Name[0]}`, "Upload Failed");
         });
     }
 }

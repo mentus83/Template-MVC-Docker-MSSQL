@@ -58,13 +58,12 @@ namespace mvc.Api.Controllers
         public IActionResult AddNew([FromBody]MyObjectViewModel model)
         {
             if (!_repo.DatabaseIsAvailable()) return NotFound("Database is not available!");
-            if (!ModelState.IsValid) return Forbid($"Failed to store data in the database: {ModelState}");
             try
             {
                 var myObject = _mapper.Map<MyObject>(model);
                 _repo.AddEntity(myObject);
                 _repo.SaveAll();
-                return Created($"/api/myobject/{model.Id}", model);
+                return Created($"/api/myobject/{myObject.Id}", myObject);
             }
             catch (System.Exception ex)
             {

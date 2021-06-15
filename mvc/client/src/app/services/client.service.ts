@@ -19,8 +19,9 @@ export class Client {
 
     addNewMyObject(newMyObject:MyObject){
         return this.http.post("/api/myobject", newMyObject)
-            .pipe(map(data => {
-                
-            }));
+            .pipe(map((data: any) => {
+                return data.id;
+            })
+        );
     }
 }
