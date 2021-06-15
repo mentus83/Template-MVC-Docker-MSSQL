@@ -38,7 +38,7 @@
                                 <div class="input-group-prepend">
                                     <label For="LastUpdatedInput" class="input-group-text">Last Updated</label>
                                 </div>
-                                <input class="form-control" name="LastUpdated" id="LastUpdatedInput" type="text"
+                                <input class="form-control" name="LastUpdated" id="LastUpdatedInput" type="datetime-local"
                                     [(ngModel)]="newMyObjectToAdd.lastUpdated" />
                             </div>
                             <div class="input-group mb-2">
@@ -94,7 +94,7 @@
                                 <td>{{ o.id }}</td>
                                 <td>{{ o.name }}</td>
                                 <td>{{ o.description }}</td>
-                                <td>{{ o.lastUpdated }}</td>
+                                <td>{{ formatDate(o.lastUpdated) }}</td>
                                 <td>{{ o.lastUpdatedBy }}</td>
                             </tr>
                             <tr class="myObjectItems">

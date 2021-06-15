@@ -1,4 +1,5 @@
 build:
+	cd mvc/client && npm install && ng build --configuration development
 	cd mvc && docker build $(options) -t web-dotnetcore:latest .
 
 run:

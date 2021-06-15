@@ -4,6 +4,7 @@ import { Client } from "../services/client.service";
 import * as $ from "jquery";
 import { MyObject } from "../models/MyObject";
 import { NotificationService } from "../services/notification.service";
+import { formatDate } from "@angular/common";
 
 @Component({
     selector: "my-objects",
@@ -65,6 +66,8 @@ export default class MyObjectListView implements OnInit {
                     this.notify.showError(`${errorResp?.error}`, "Failed to retreive data!");
                 });
     }
+
+    public formatDate(date: Date){
+        return formatDate(date, 'YYYY-MM-dd HH:mm:ss', "en-AU")    
+    }
 }
-
-

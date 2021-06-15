@@ -113,6 +113,4 @@ e.g. using PowerShell cpmmand:
 - Markdown Preview Enhanced (Yiyi Wang) v0.5.21
 
 ## To Be Implemented
-### API Update & Delete
-### fix form outline
-### format dates
+### API Put & Delete
