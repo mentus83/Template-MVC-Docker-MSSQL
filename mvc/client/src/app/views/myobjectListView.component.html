@@ -3,59 +3,66 @@
         <h3>List of My Objects</h3>
     </div>
     <div class="row">
-        <div class="col"></div>
-        <div class="col-8">
+        <div class="col-1"></div>
+        <div class="col-10">
             <div class="row">
                 <div>
-                    <div id="addItemDiv" (click)="toggleAddNewMyObject($event)">
-                        <i class="fas fa-plus-circle" id="addItemButton"></i>
+                    <div id="div_addSection" (click)="toggleAddNewMyObject($event)">
+                        <i class="fas fa-plus-circle" id="btn_addSection"></i>
                         <span>Add</span>
                     </div>
                 </div>
             </div>
-            <div class="row addNewMyObjectDiv">
+            <div class="row" id="div_addNewMyObject">
                 <form>
-                    <div class="col-5">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <label For="NameInput" class="input-group-text">Name</label>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label For="NameInput" class="input-group-text">Name</label>
+                                </div>
+                                <input class="form-control" name="Name" id="NameInput" type="text"
+                                    [(ngModel)]="newMyObjectToAdd.name" />
                             </div>
-                            <input class="form-control" name="Name" id="NameInput" type="text"
-                                [(ngModel)]="newMyObjectToAdd.name" />
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label For="DescriptionInput" class="input-group-text">Description</label>
+                                </div>
+                                <input class="form-control" name="Description" id="DescriptionInput" type="text"
+                                    [(ngModel)]="newMyObjectToAdd.description" />
+                            </div>
                         </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <label For="DescriptionInput" class="input-group-text">Description</label>
+                        <div class="col"></div>
+                        <div class="col-sm-5">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label For="LastUpdatedInput" class="input-group-text">Last Updated</label>
+                                </div>
+                                <input class="form-control" name="LastUpdated" id="LastUpdatedInput" type="text"
+                                    [(ngModel)]="newMyObjectToAdd.lastUpdated" />
                             </div>
-                            <input class="form-control" name="Description" id="DescriptionInput" type="text"
-                                [(ngModel)]="newMyObjectToAdd.description" />
-                        </div>
-                    </div>
-                    <div class="col"></div>
-                    <div class="col-5">
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <label For="LastUpdatedInput" class="input-group-text">Last Updated</label>
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <label For="LastUpdatedByInput" class="input-group-text">Last Updated By</label>
+                                </div>
+                                <input class="form-control" name="LastUpdatedBy" id="LastUpdatedByInput" type="text"
+                                    [(ngModel)]="newMyObjectToAdd.lastUpdatedBy" />
                             </div>
-                            <input class="form-control" name="LastUpdated" id="LastUpdatedInput" type="text"
-                                [(ngModel)]="newMyObjectToAdd.lastUpdated" />
-                        </div>
-                        <div class="input-group mb-2">
-                            <div class="input-group-prepend">
-                                <label For="LastUpdatedByInput" class="input-group-text">Last Updated By</label>
-                            </div>
-                            <input class="form-control" name="LastUpdatedBy" id="LastUpdatedByInput" type="text"
-                                [(ngModel)]="newMyObjectToAdd.lastUpdatedBy" />
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"></div>
-                        <div class="col-1">
-                            <a href="#" class="btn btn-primary" (click)="addNewObject()">Add</a>
+                        <div class="d-grid gap-2 col-3 mx-auto" id="div_addNewObjectButton">
+                            <button class="btn btn-primary" type="button" (click)="addNewObject()">Add New Object</button>
                         </div>
                     </div>
                 </form>
             </div>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col"></div>
+        <div class="col-8">
             <div class="row">
                 <div class="col"></div>
                 <div class="col-4">
@@ -66,6 +73,9 @@
                         <input class="form-control" name="Filter" id="FilterInput" type="text" [(ngModel)]="filter" />
                     </div>
                 </div>
+            </div>
+            <div class="row" id="div_refreshButton">
+                <i class="fas fa-redo" id="btn_refresh" (click)="refreshTableData()"></i>
             </div>
             <table class="table table-condenced">
                 <thead>
@@ -113,12 +123,18 @@
                     </ng-container>
                 </tbody>
             </table>
+        </div>
+        <div class="col"></div>
+    </div>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
             <ng-container *ngIf="!isProduction()">
-                <div class="row" id="devHelper">
+                <div class="row" id="div_devHelper">
                     <code>{{ client.myobjects | json }}</code>
                 </div>
             </ng-container>
         </div>
-        <div class="col"></div>
+        <div class="col-auto"></div>
     </div>
 </div>

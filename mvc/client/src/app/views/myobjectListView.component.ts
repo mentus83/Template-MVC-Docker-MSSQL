@@ -16,14 +16,7 @@ export default class MyObjectListView implements OnInit {
     public newMyObjectToAdd: MyObject = new MyObject();
 
     ngOnInit(): void {
-        this.client.loadMyObjects()
-            .subscribe(
-                () => {
-                    this.notify.showSuccess("Data retreived from database", "Download Success", 1000, false, false, false);
-                },
-                errorResp => {
-                    this.notify.showError(`${errorResp?.error}`, "Failed to retreive data!");
-                });
+        this.GetMyObjectsData();
     }
 
     public filter = "";
@@ -42,13 +35,18 @@ export default class MyObjectListView implements OnInit {
     }
 
     public toggleAddNewMyObject(event:any): void {
-        $(event.target).closest('div.row').next('div.addNewMyObjectDiv').fadeToggle(200);
+        $('#div_addNewMyObject').fadeToggle(200);
+    }
+
+    public refreshTableData(): void {
+        this.GetMyObjectsData();
     }
 
     public addNewObject() {
         this.client.addNewMyObject(this.newMyObjectToAdd)
             .subscribe(addedObjId => {
                 this.notify.showSuccess(`New object was successfully added to the database.</br>id=${addedObjId}`, "Upload Success");
+                this.client.loadMyObjects().subscribe();
             }, errorResp => {
                 if (errorResp.error && errorResp.error.errors && errorResp.error.errors.Name)
                     this.notify.showError(`${errorResp?.error?.errors?.Name[0]}`, "Upload Failed");
@@ -56,4 +54,17 @@ export default class MyObjectListView implements OnInit {
                     this.notify.showError(`${errorResp?.error}`, "Upload Failed");
             });
     }
+
+    GetMyObjectsData() {
+        this.client.loadMyObjects()
+                .subscribe(
+                    () => {
+                        this.notify.showSuccess("Data retreived from database", "Download Success", 1000, false, false, false);
+                    },
+                    errorResp => {
+                        this.notify.showError(`${errorResp?.error}`, "Failed to retreive data!");
+                    });
+    }
 }
+
+

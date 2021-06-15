@@ -1,28 +1,37 @@
-#devHelper {
+#div_devHelper {
     margin-top: 100px;
 }
 
-.myObjectItems, .addNewMyObjectDiv {
+.myObjectItems {
     display: none;
 }
 
-#addItemButton {
+#btn_addSection {
     color: forestgreen;
     padding-right: 5px;
 }
 
-#addItemDiv {
+#div_addSection {
     float: left;
     width: 60px;
 }
 
-.addNewMyObjectDiv {
+#div_addNewMyObject {
     padding: 20px;
     border: dashed teal 2px;
     margin: 10px;
+    display: none;
 }
 
 tr.myObjectItems th, tr.myObjectItems td {
     color: rgb(79, 84, 90);
     background-color: rgb(240, 236, 236);
+}
+
+#div_addNewObjectButton {
+    margin-top: 10px;
+}
+
+#div_refreshButton {
+    float: right;
 }
