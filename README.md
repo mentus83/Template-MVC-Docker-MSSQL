@@ -5,16 +5,19 @@
 - Framework
     - ASP .net core 5 MVC
 - Data
-    - MS SQL Server
-    - EntityFramework Core
-    - AutoMapper
+    - MS SQL Server 14.0.3370.1 (Docker tag: 2017-CU24-ubuntu-16.04)
+    - EntityFramework Core v5.0.6
+    - NewtonSoft v5.0.7
+    - AutoMapper v8.1.1
 - Front-end
-    - Angular
-    - Bootstrap
-    - Fontawesome
-    - Razor Pages
+    - Angular v12.0.4
+    - JQuery v3.6.0
+    - Bootstrap v5.0.1
+    - Fontawesome v5.15.3
+    - ngx-toastr v14.0.0
+    - Razor Pages v5.0.7
 - Hosting Environment
-    - Docker
+    - Docker v20.10.6,-build 370c289
 
 ## Requirements for development environment
 ### dotnet sdk 5
@@ -75,9 +78,12 @@ Download manually or use Visual Studio `Add` > `Client-side library` which uses 
 - `ng build --configuration production --watch`
 - `ng build --configuration development --watch`
 ### Install Bootstrap, Jquery and its definitions to use in Angular
-- `npm install --save bootstrap jquery`
+#### JQuery & Bootstrap
+- `npm install bootstrap jquery`
 - `npm install -D @types/bootstrap @types/jquery`
-### Run Angular to serve the client app and view it in a browser
+#### Toastr
+- `npm install ngx-toastr`
+### Run Angular to serve the client app and view it in a browser (if want to view the angular page independently from ASP.NETcore app)
 - `ng serve`
 
 ## Razor Pages
@@ -106,5 +112,4 @@ e.g. using PowerShell cpmmand:
 - Markdown Preview Enhanced (Yiyi Wang) v0.5.21
 
 ## To Be Implemented
-### Views
-### API Post & Delete
+### API Update & Delete

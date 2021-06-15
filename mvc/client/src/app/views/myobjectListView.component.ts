@@ -3,15 +3,19 @@ import { environment } from "src/environments/environment";
 import { Client } from "../services/client.service";
 import * as $ from "jquery";
 import { MyObject } from "../models/MyObject";
+import { NotificationService } from "../services/notification.service";
+import { Toast } from "bootstrap";
 
 @Component({
     selector: "my-objects",
     templateUrl: "myobjectListView.component.html",
-    styleUrls: [ "myobjectListView.component.css" ]
+    styleUrls: [ 
+        "myobjectListView.component.css", 
+        "../../../node_modules/ngx-toastr/toastr.css"  // This does not work! still needs toasrt.css file to be added to the main html file
+    ]
 })
 export default class MyObjectListView implements OnInit {
-    constructor(public client: Client){
-    }
+    constructor(public client: Client, private notify: NotificationService){ }
     
     public newMyObjectToAdd: MyObject = new MyObject();
 
@@ -41,12 +45,11 @@ export default class MyObjectListView implements OnInit {
 
     // TODO
     public addNewObject() {
-        console.log("posting object", this.newMyObjectToAdd);
         this.client.addNewMyObject(this.newMyObjectToAdd)
         .subscribe(() => {
-            // success
+            this.notify.showSuccess("New object was successfully added to the database.", "Upload Success");
         }, error => {
-            // error
+            this.notify.showError(`Failed to add new object to the database</br>${error.message}`, "Upload Failed");
         });
     }
 }
