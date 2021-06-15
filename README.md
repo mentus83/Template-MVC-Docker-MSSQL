@@ -83,6 +83,7 @@ Download manually or use Visual Studio `Add` > `Client-side library` which uses 
 - `npm install -D @types/bootstrap @types/jquery`
 #### Toastr
 - `npm install ngx-toastr`
+- add `toastr.css` link to the html file it's being used in. *Only adding the css into the component when page is served by ASP.NETcore.*
 ### Run Angular to serve the client app and view it in a browser (if want to view the angular page independently from ASP.NETcore app)
 - `ng serve`
 

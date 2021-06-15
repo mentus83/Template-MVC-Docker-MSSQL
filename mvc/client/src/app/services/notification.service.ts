@@ -9,21 +9,23 @@ export class NotificationService {
 
   constructor(private toastr: ToastrService) { }
 
-  config = { closeButton: true, timeOut: 5000, progressBar: true, enableHtml: true };
-
-  showSuccess(message:string, title:string) {
-    this.toastr.success(message, title, this.config)
+  showSuccess(message:string, title:string, timeout:number=4000, closeButton:boolean=true, progressBar:boolean=true, enableHtml:boolean=true) {
+    let config = { timeOut: timeout, closeButton: closeButton, progressBar: progressBar, enableHtml: enableHtml };
+    this.toastr.success(message, title, config)
   }
 
-  showError(message:string, title:string) {
-    this.toastr.error(message, title, this.config)
+  showError(message:string, title:string, timeout:number=4000, closeButton:boolean=true, progressBar:boolean=true, enableHtml:boolean=true) {
+    let config = { timeOut: timeout, closeButton: closeButton, progressBar: progressBar, enableHtml: enableHtml };
+    this.toastr.error(message, title, config)
   }
 
-  showInfo(message:string, title:string) {
-    this.toastr.info(message, title, this.config)
+  showInfo(message:string, title:string, timeout:number=4000, closeButton:boolean=true, progressBar:boolean=true, enableHtml:boolean=true) {
+    let config = { timeOut: timeout, closeButton: closeButton, progressBar: progressBar, enableHtml: enableHtml };
+    this.toastr.info(message, title, config)
   }
 
-  showWarning(message:string, title:string) {
-    this.toastr.warning(message, title, this.config)
+  showWarning(message:string, title:string, timeout:number=4000, closeButton:boolean=true, progressBar:boolean=true, enableHtml:boolean=true) {
+    let config = { timeOut: timeout, closeButton: closeButton, progressBar: progressBar, enableHtml: enableHtml };
+    this.toastr.warning(message, title, config)
   }
 }

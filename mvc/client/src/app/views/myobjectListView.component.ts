@@ -4,15 +4,11 @@ import { Client } from "../services/client.service";
 import * as $ from "jquery";
 import { MyObject } from "../models/MyObject";
 import { NotificationService } from "../services/notification.service";
-import { Toast } from "bootstrap";
 
 @Component({
     selector: "my-objects",
     templateUrl: "myobjectListView.component.html",
-    styleUrls: [ 
-        "myobjectListView.component.css", 
-        "../../../node_modules/ngx-toastr/toastr.css"  // This does not work! still needs toasrt.css file to be added to the main html file
-    ]
+    styleUrls: [ "myobjectListView.component.css" ]
 })
 export default class MyObjectListView implements OnInit {
     constructor(public client: Client, private notify: NotificationService){ }
@@ -21,7 +17,13 @@ export default class MyObjectListView implements OnInit {
 
     ngOnInit(): void {
         this.client.loadMyObjects()
-            .subscribe();
+            .subscribe(
+                () => {
+                    this.notify.showSuccess("Data retreived from database", "Download Success", 1000, false, false, false);
+                },
+                errorResp => {
+                    this.notify.showError(`${errorResp?.error}`, "Failed to retreive data!");
+                });
     }
 
     public filter = "";
@@ -36,20 +38,22 @@ export default class MyObjectListView implements OnInit {
     }
 
     public toggleMyObjectItems(event:any): void {
-        $(event.target).closest('tr').next('.myObjectItems').toggle(200);
+        $(event.target).closest('tr').next('.myObjectItems').fadeToggle(200);
     }
 
     public toggleAddNewMyObject(event:any): void {
-        $(event.target).closest('div.row').next('div.addNewMyObjectDiv').toggle(200);
+        $(event.target).closest('div.row').next('div.addNewMyObjectDiv').fadeToggle(200);
     }
 
     public addNewObject() {
         this.client.addNewMyObject(this.newMyObjectToAdd)
-        .subscribe(addedObjId => {
-            this.notify.showSuccess(`New object was successfully added to the database.</br>id=${addedObjId}`, "Upload Success");
-        }, errorResp => {
-            console.error(errorResp);
-            this.notify.showError(`${errorResp.error.errors.Name[0]}`, "Upload Failed");
-        });
+            .subscribe(addedObjId => {
+                this.notify.showSuccess(`New object was successfully added to the database.</br>id=${addedObjId}`, "Upload Success");
+            }, errorResp => {
+                if (errorResp.error && errorResp.error.errors && errorResp.error.errors.Name)
+                    this.notify.showError(`${errorResp?.error?.errors?.Name[0]}`, "Upload Failed");
+                else 
+                    this.notify.showError(`${errorResp?.error}`, "Upload Failed");
+            });
     }
 }
