@@ -60,7 +60,7 @@ export default class MyObjectListView implements OnInit {
         this.client.loadMyObjects()
             .subscribe(
                 () => {
-                    this.notify.showSuccess("Data retreived from database", "Download Success", 1000, false, false, false);
+                    this.notify.showInfo("Data retreived from database", "Download Success", 1000, false, false, false);
                 },
                 errorResp => {
                     this.notify.showError(`${errorResp?.error}`, "Failed to retreive data!");

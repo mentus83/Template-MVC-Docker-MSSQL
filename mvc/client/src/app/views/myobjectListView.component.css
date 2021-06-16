@@ -35,3 +35,11 @@ tr.myObjectItems th, tr.myObjectItems td {
 #div_refreshButton {
     float: right;
 }
+
+.clickable {
+    text-shadow: 4px 4px 5px gray;
+}
+.clickable:hover {
+    text-shadow: 2px 2px 3px gray;
+    cursor: pointer;
+}
